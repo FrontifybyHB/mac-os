@@ -1,4 +1,4 @@
-# mac-os
+# Mac-OS
 
 Welcome to the **mac-os** project! This repository is maintained by [FrontifybyHB](https://github.com/FrontifybyHB).
 
