@@ -30,7 +30,7 @@ const App: React.FC = () => {
             zIndex: 1
         }
     ]);
-    const [desktopIcons, setDesktopIcons] = useState([
+    const [desktopIcons, _setDesktopIcons] = useState([
         { id: 1, name: 'Finder', icon: 'folder-line', color: 'from-blue-400 to-blue-600' },
         { id: 2, name: 'Safari', icon: 'global-line', color: 'from-blue-500 to-blue-700' },
         { id: 3, name: 'Messages', icon: 'message-3-line', color: 'from-green-400 to-green-600' },
@@ -199,22 +199,8 @@ const App: React.FC = () => {
             window.removeEventListener('mouseup', handleMouseUp);
         };
     }, [isDragging]);
-    const getCurrentTime = () => {
-        const now = new Date();
-        return now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
-    };
-    const [time, setTime] = useState(getCurrentTime());
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setTime(getCurrentTime());
-        }, 60000);
-        return () => clearInterval(timer);
-    }, []);
-    const currentDate = new Date().toLocaleDateString('en-US', {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric'
-    });
+
+
     return (
         <div className="w-screen h-screen bg-cover bg-center overflow-hidden fixed inset-0"
             style={{
